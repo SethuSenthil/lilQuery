@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p id="grod">iffjf</p>
+<p class="bod"> Class</p>
+<p class="bod"> Clafss</p>
+</body>
+<script>
+let doc = document,
+el,
+    log = (se) =>{
+        console.log(se);
+    }
+   id = (e) => {
+          return doc.getElementById(e);
+      },
+      classGet = (e, n) => {
+          return doc.getElementsByClassName(e)[n];
+      },
+      classLength = (e) => {
+          return doc.getElementsByClassName(e).length;
+      },
+      tag = (e, n) => {
+          return doc.getElementsByTagName(e)[n];
+      },
+      classGetAll = (e, f) => {
+          for (let i = 0; i <classLength(e); i++) {
+            el = classGet(e, i);
+            let classElem = classGet(e, i);
+        ef = `${f}();`;
+        eval(ef);
+          }
+      },
+      get = (e,nf) =>{
+        let ed = e.slice(1, e.length);
+        let fl = e.charAt(0);
+          if (fl === '#') {
+            return id(ed);
+          }else if(fl === '.' && nf !== ''){
+            return classGet(ed, nf);
+          } else if(fl === '.' && nf === ''){
+            return classGetAll(ed, nf)
+          }
+      }
+</script>
+<script>
+    function colll() {
+        el.style.color = 'red';
+    }
+classGetAll('bod','colll');
+</script>
+</html>
