@@ -4,14 +4,14 @@
    * MIT License (link)
    */
   let doc = document,
-  el, //exposes element to global
+  el, //exposes element to global scope
       log = (se) =>{
           console.log(se);
       }
      id = (e,f) => {
             el = doc.getElementById(e);
-            if (f !== '') {
-                ef = `${f}();`; //builds function reference into executubile js format
+            if (f !== undefined) {
+                ef = `${f}();`; //builds function reference into executable js format
                 eval(ef);
             }else{
                 return el;
@@ -28,13 +28,13 @@
         },
         classGetAll = (e, f) => {
             for (let i = 0; i <classLength(e); i++) {
-         el = classGet(e, i); //fetches current element refferfc in loop iteration
-          ef = `${f}();`; //builds function reference into executubile js format
+         el = classGet(e, i); //fetches current element in loop iteration
+          ef = `${f}();`; //builds function reference into executable js format
           eval(ef);
             }
         },
         get = (e,nf) =>{
-          let fl = e.charAt(0), //Gets first character of the first perameter
+          let fl = e.charAt(0), //Gets first character of the first parameter
           fc = e.slice(1, e.length); //"Removal" of the first character
             if (fl === '#') {  //Checks if it's an id, class, or a "getClassAll"
               return id(fc);
