@@ -11,7 +11,7 @@ Download the js files here \
 or use the raw git \
 \
 JS fiddle boilerplate
-#Why?
+# Why?
 Its just another js library, in fact it isn't even a library. Getting element from the DOM shouldn't be as long or as hard as it is right now.
 It takes around 40-55 characters to get an element and do something simple. It only gets worse with event listeners and so on, but this library should shorten it down to 30-33.
 
@@ -23,8 +23,10 @@ When getting element by class it is required to pass in a function in string for
 `get('.class','theFunction')`
 
 # Getting an element by Id
-id - type locked id selector/
-`id('elementID).style.color = 'blue'` \
+id - type locked id selector \
+```javascript
+id('elementID').style.color = 'blue'
+```
 To be consistent you may enter a function (in string format) as the second perimeter just like before. /
 `let theFunction = () =>{el.style.color = 'blue'};` \
 `id('elementID','theFunction')`
@@ -51,4 +53,5 @@ log - console.log shortcut
 `log('hello world')`
 
 # Contributing
-Yes please! Make sure to update the docs, and the TODO list and a minified version of the library.
+Yes please! Make sure to update the docs!
+To build run `npm start`
